@@ -12,15 +12,22 @@
 //extern 变量
 #endif
 
-void InitLCD12864();
-void LCDInitImage();
+void InitLCD12864();//初始化液晶
+void LCDClearAll();//清屏
+
+/*字符显示*/
 void LCDShowStr(uint8 x, uint8 y, uint8* str, uint8 strlen);	//写入字符串
 void LCDShowCN(uint8 x, uint8 y, uint16* str, uint8 strlen);	//写入中文
-void LCDShowImage(uint8* image);//绘图
+
+/*光标设置*/
 void LCDSetCursor(uint8 x, uint8 y);//设定光标
 void LCDShowCursor();//显示光标
 void LCDCancelCursor();//取消显示光标
-void LCDClearAll();//清屏
-void LCDDrawArea(uint8 x, uint8 y, uint8* image);
+
+/* 绘图函数 */
+void LCDInitImage(); //初始化图像RAM（置0）
+void LCDClearImage(uint8 x, uint8 y);	 //清空16*16区域
+void LCDDrawArea(uint8 x, uint8 y, uint8* image);	//画16*16图像
+void LCDShowImage(uint8* image);//绘全屏图
 
 #endif

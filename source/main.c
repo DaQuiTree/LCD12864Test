@@ -99,7 +99,7 @@ uint8 code moonImage[] = {
 
 void main()
 {
-	uint16 i;
+	uint16 i,j;
 
 	i=0xA1A4;
 	InitLCD12864();
@@ -113,7 +113,6 @@ void main()
 //	LCDSetCursor(1,1);
 //	i = 0xA1C3;
 	LCDInitImage();
-	//for(j = 0; j < 10000; j++);
 	//_nop_();
 //	LCDDrawArea(0,0,ClockImage);
 	LCDDrawArea(5,0,moonImage);
@@ -123,6 +122,8 @@ void main()
 	LCDShowCN(5,1,&i,1);
 	LCDShowCN(0,3,prompt3,8);
 	LCDShowCN(3,2,"周一",3);
+	for(j = 0; j < 30000; j++);
+	LCDClearImage(5,0);
 //	LCDShowCN(0,3,"身体健康万事如意",8); */
 	while(1);
 }

@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   MAIN                                                                  05/29/2017 15:06:42 PAGE 1   
+C51 COMPILER V8.08   MAIN                                                                  05/29/2017 15:14:32 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
   52          0x20,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x0F,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFC,
   53          0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x0F,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFC,
   54          0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x07,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFC,
-C51 COMPILER V8.08   MAIN                                                                  05/29/2017 15:06:42 PAGE 2   
+C51 COMPILER V8.08   MAIN                                                                  05/29/2017 15:14:32 PAGE 2   
 
   55          0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x07,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFC,
   56          0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x10,0x07,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xF8,
@@ -111,7 +111,7 @@ line level    source
   99          
  100          void main()
  101          {
- 102   1              uint16 i;
+ 102   1              uint16 i,j;
  103   1      
  104   1              i=0xA1A4;
  105   1              InitLCD12864();
@@ -125,27 +125,28 @@ line level    source
  113   1      //      LCDSetCursor(1,1);
  114   1      //      i = 0xA1C3;
  115   1              LCDInitImage();
- 116   1              //for(j = 0; j < 10000; j++);
-C51 COMPILER V8.08   MAIN                                                                  05/29/2017 15:06:42 PAGE 3   
+ 116   1              //_nop_();
+C51 COMPILER V8.08   MAIN                                                                  05/29/2017 15:14:32 PAGE 3   
 
- 117   1              //_nop_();
- 118   1      //      LCDDrawArea(0,0,ClockImage);
- 119   1              LCDDrawArea(5,0,moonImage);
- 120   1      //      LCDDrawArea(7,0,sunImage);
- 121   1              LCDShowStr(1,1,"2017  05  09",12);
- 122   1              LCDShowCN(3,1,&i,1);
- 123   1              LCDShowCN(5,1,&i,1);
- 124   1              LCDShowCN(0,3,prompt3,8);
- 125   1              LCDShowCN(3,2,"周一",3);
-*** WARNING C182 IN LINE 125 OF ..\SOURCE\MAIN.C: pointer to different objects
- 126   1      //      LCDShowCN(0,3,"身体健康万事如意",8); */
- 127   1              while(1);
- 128   1      }
- 129          
+ 117   1      //      LCDDrawArea(0,0,ClockImage);
+ 118   1              LCDDrawArea(5,0,moonImage);
+ 119   1      //      LCDDrawArea(7,0,sunImage);
+ 120   1              LCDShowStr(1,1,"2017  05  09",12);
+ 121   1              LCDShowCN(3,1,&i,1);
+ 122   1              LCDShowCN(5,1,&i,1);
+ 123   1              LCDShowCN(0,3,prompt3,8);
+ 124   1              LCDShowCN(3,2,"周一",3);
+*** WARNING C182 IN LINE 124 OF ..\SOURCE\MAIN.C: pointer to different objects
+ 125   1              for(j = 0; j < 30000; j++);
+ 126   1              LCDClearImage(5,0);
+ 127   1      //      LCDShowCN(0,3,"身体健康万事如意",8); */
+ 128   1              while(1);
+ 129   1      }
+ 130          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    107    ----
+   CODE SIZE        =    128    ----
    CONSTANT SIZE    =   1174    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

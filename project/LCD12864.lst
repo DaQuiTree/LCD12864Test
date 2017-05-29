@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:06:42 PAGE 1   
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE LCD12864
@@ -62,7 +62,7 @@ line level    source
   52   2                      LCDWriteData(*str++);
   53   2                      strlen--;       
   54   2              }while(strlen > 0);
-C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:06:42 PAGE 2   
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 2   
 
   55   1      }
   56          
@@ -126,7 +126,7 @@ line level    source
  114   1              LCDShowStr(0,0," ",1);
  115   1      }
  116          
-C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:06:42 PAGE 3   
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 3   
 
  117          void LCDShowImage(uint8* image)
  118          {
@@ -190,7 +190,7 @@ line level    source
  176   1      }
  177          
  178          void LCDInitImage()
-C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:06:42 PAGE 4   
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 4   
 
  179          {
  180   1              uint8 i,j;
@@ -219,10 +219,44 @@ line level    source
  203   1              LCDWriteCmd(0x36);
  204   1              LCDWriteCmd(0x30);              
  205   1      }
+ 206          
+ 207          void LCDClearImage(uint8 x, uint8 y)
+ 208          {
+ 209   1              uint8 i;
+ 210   1      
+ 211   1              LCDWriteCmd(0x34); //扩充指令集设定关闭绘图显示
+ 212   1              LCDWriteCmd(0x34);
+ 213   1      
+ 214   1              if(y < 2){                      //处于前两行
+ 215   2                      for(i = 0; i < 16; i++){
+ 216   3                              LCDWriteCmd((0x80 | y*16)|i); //设置绘图垂直地址
+ 217   3                              LCDWriteCmd(0x80 | x);//设置绘图水平地址
+ 218   3      
+ 219   3                              LCDWriteData(0x00);// 写入一行
+ 220   3                              LCDWriteData(0x00);
+ 221   3                      }
+ 222   2              }else{                  //处于后两行
+ 223   2                      for(i = 0; i < 16; i++){
+ 224   3                              LCDWriteCmd((0x80 | y*16)|i); //设置绘图垂直地址
+ 225   3                              LCDWriteCmd(0x88 | x);//设置绘图水平地址
+ 226   3      
+ 227   3                              LCDWriteData(0x00);// 写入一行
+ 228   3                              LCDWriteData(0x00);
+ 229   3                      }
+ 230   2              }
+ 231   1      
+ 232   1              LCDWriteCmd(0x80 | y*16); //归于原点
+ 233   1              LCDWriteCmd(0x80 | x);
+ 234   1      
+ 235   1              LCDWriteCmd(0x36);
+ 236   1              LCDWriteCmd(0x30);      
+ 237   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    652    ----
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 5   
+
+   CODE SIZE        =    767    ----
    CONSTANT SIZE    =      2    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

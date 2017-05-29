@@ -203,3 +203,35 @@ void LCDInitImage()
 	LCDWriteCmd(0x36);
 	LCDWriteCmd(0x30);		
 }
+
+void LCDClearImage(uint8 x, uint8 y)
+{
+	uint8 i;
+
+	LCDWriteCmd(0x34); //扩充指令集设定关闭绘图显示
+	LCDWriteCmd(0x34);
+
+	if(y < 2){			//处于前两行
+		for(i = 0; i < 16; i++){
+			LCDWriteCmd((0x80 | y*16)|i); //设置绘图垂直地址
+			LCDWriteCmd(0x80 | x);//设置绘图水平地址
+
+			LCDWriteData(0x00);// 写入一行
+			LCDWriteData(0x00);
+		}
+	}else{			//处于后两行
+		for(i = 0; i < 16; i++){
+			LCDWriteCmd((0x80 | y*16)|i); //设置绘图垂直地址
+			LCDWriteCmd(0x88 | x);//设置绘图水平地址
+
+			LCDWriteData(0x00);// 写入一行
+			LCDWriteData(0x00);
+		}
+	}
+
+	LCDWriteCmd(0x80 | y*16); //归于原点
+	LCDWriteCmd(0x80 | x);
+
+	LCDWriteCmd(0x36);
+	LCDWriteCmd(0x30);	
+}
