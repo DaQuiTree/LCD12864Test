@@ -139,5 +139,63 @@ void LCDShowImage(uint8* image)
 			LCDWriteData(*image++);
 		}
 	}	
-	LCDWriteCmd(0x36);	
+	LCDWriteCmd(0x36); //打开绘图显示
+	LCDWriteCmd(0x30);	//进入基本指令操作
+}
+
+void LCDDrawArea(uint8 x, uint8 y, uint8* image)//读入16*16图片
+{
+	uint8 i;
+
+	LCDWriteCmd(0x34); //扩充指令集设定关闭绘图显示
+	LCDWriteCmd(0x34);
+
+	if(y < 2){			//处于前两行
+		for(i = 0; i < 16; i++){
+			LCDWriteCmd((0x80 | y*16)|i); //设置绘图垂直地址
+			LCDWriteCmd(0x80 | x);//设置绘图水平地址
+
+			LCDWriteData(*image++);// 写入一行
+			LCDWriteData(*image++);
+		}
+	}else{			//处于后两行
+		for(i = 0; i < 16; i++){
+			LCDWriteCmd((0x80 | y*16)|i); //设置绘图垂直地址
+			LCDWriteCmd(0x88 | x);//设置绘图水平地址
+
+			LCDWriteData(*image++);// 写入一行
+			LCDWriteData(*image++);
+		}
+	}
+	LCDWriteCmd(0x36);
+	LCDWriteCmd(0x30);
+}
+
+void LCDInitImage()
+{
+	uint8 i,j;
+
+	LCDWriteCmd(0x34); //扩充指令集设定关闭绘图显示
+	LCDWriteCmd(0x34);
+	for(i = 0; i < 32; i++){
+		LCDWriteCmd(0x80 | i); //设置绘图垂直地址
+		LCDWriteCmd(0x80);
+		for( j = 0; j < 8; j++)
+		{
+			LCDWriteData(0x00);
+			LCDWriteData(0x00);
+		}
+	}
+	
+	for(i = 0; i < 32; i++){
+		LCDWriteCmd(0x80 | i); //设置绘图垂直地址
+		LCDWriteCmd(0x88);
+		for( j = 0; j < 8; j++)
+		{
+			LCDWriteData(0x00);
+			LCDWriteData(0x00);
+		}
+	}	
+	LCDWriteCmd(0x36);
+	LCDWriteCmd(0x30);		
 }
