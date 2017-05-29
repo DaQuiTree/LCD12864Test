@@ -235,3 +235,12 @@ void LCDClearImage(uint8 x, uint8 y)
 	LCDWriteCmd(0x36);
 	LCDWriteCmd(0x30);	
 }
+
+void LCDClearArea(uint8 x, uint8 y)
+{
+	uint16 code clearDat[] = {
+		0xA1A0,0xA1A0,0xA1A0,0xA1A0,0xA1A0,0xA1A0,0xA1A0,0xA1A0,
+	};
+
+	LCDShowCN(x,y,clearDat,8-x);
+}

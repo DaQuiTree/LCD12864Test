@@ -18,6 +18,7 @@ void LCDClearAll();//清屏
 /*字符显示*/
 void LCDShowStr(uint8 x, uint8 y, uint8* str, uint8 strlen);	//写入字符串
 void LCDShowCN(uint8 x, uint8 y, uint16* str, uint8 strlen);	//写入中文
+void LCDClearArea(uint8 x, uint8 y);
 
 /*光标设置*/
 void LCDSetCursor(uint8 x, uint8 y);//设定光标

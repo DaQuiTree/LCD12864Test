@@ -124,6 +124,7 @@ void main()
 	LCDShowCN(3,2,"周一",3);
 	for(j = 0; j < 30000; j++);
 	LCDClearImage(5,0);
+	LCDClearArea(3,1);
 //	LCDShowCN(0,3,"身体健康万事如意",8); */
 	while(1);
 }

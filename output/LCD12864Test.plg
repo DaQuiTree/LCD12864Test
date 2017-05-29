@@ -1132,3 +1132,42 @@ linking...
 Program Size: data=20.0 xdata=0 code=2154
 creating hex file from "..\output\LCD12864Test"...
 "..\output\LCD12864Test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling LCD12864.c...
+compiling main.c...
+..\SOURCE\MAIN.C(124): warning C182: pointer to different objects
+..\SOURCE\MAIN.C(127): warning C206: 'LCDClearArea': missing function-prototype
+..\SOURCE\MAIN.C(127): error C267: 'LCDClearArea': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling LCD12864.c...
+compiling main.c...
+..\SOURCE\MAIN.C(124): warning C182: pointer to different objects
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDSHOWCURSOR?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCANCELCURSOR?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEARALL?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSHOWIMAGE?LCD12864
+Program Size: data=20.0 xdata=0 code=2192
+creating hex file from "..\output\LCD12864Test"...
+"..\output\LCD12864Test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling LCD12864.c...
+compiling main.c...
+..\SOURCE\MAIN.C(124): warning C182: pointer to different objects
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDSHOWCURSOR?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCANCELCURSOR?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCLEARALL?LCD12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSHOWIMAGE?LCD12864
+Program Size: data=20.0 xdata=0 code=2192
+creating hex file from "..\output\LCD12864Test"...
+"..\output\LCD12864Test" - 0 Error(s), 5 Warning(s).

@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 1   
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 16:55:23 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE LCD12864
@@ -62,7 +62,7 @@ line level    source
   52   2                      LCDWriteData(*str++);
   53   2                      strlen--;       
   54   2              }while(strlen > 0);
-C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 2   
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 16:55:23 PAGE 2   
 
   55   1      }
   56          
@@ -126,7 +126,7 @@ line level    source
  114   1              LCDShowStr(0,0," ",1);
  115   1      }
  116          
-C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 3   
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 16:55:23 PAGE 3   
 
  117          void LCDShowImage(uint8* image)
  118          {
@@ -190,7 +190,7 @@ line level    source
  176   1      }
  177          
  178          void LCDInitImage()
-C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 4   
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 16:55:23 PAGE 4   
 
  179          {
  180   1              uint8 i,j;
@@ -251,13 +251,22 @@ line level    source
  235   1              LCDWriteCmd(0x36);
  236   1              LCDWriteCmd(0x30);      
  237   1      }
+ 238          
+ 239          void LCDClearArea(uint8 x, uint8 y)
+ 240          {
+C51 COMPILER V8.08   LCD12864                                                              05/29/2017 16:55:23 PAGE 5   
+
+ 241   1              uint16 code clearDat[] = {
+ 242   1                      0xA1A0,0xA1A0,0xA1A0,0xA1A0,0xA1A0,0xA1A0,0xA1A0,0xA1A0,
+ 243   1              };
+ 244   1      
+ 245   1              LCDShowCN(x,y,clearDat,8-x);
+ 246   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-C51 COMPILER V8.08   LCD12864                                                              05/29/2017 15:14:32 PAGE 5   
-
-   CODE SIZE        =    767    ----
-   CONSTANT SIZE    =      2    ----
+   CODE SIZE        =    782    ----
+   CONSTANT SIZE    =     18    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----      19

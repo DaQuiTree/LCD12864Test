@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   MAIN                                                                  05/29/2017 15:14:32 PAGE 1   
+C51 COMPILER V8.08   MAIN                                                                  05/29/2017 16:55:23 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
   52          0x20,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x0F,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFC,
   53          0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x0F,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFC,
   54          0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x07,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFC,
-C51 COMPILER V8.08   MAIN                                                                  05/29/2017 15:14:32 PAGE 2   
+C51 COMPILER V8.08   MAIN                                                                  05/29/2017 16:55:23 PAGE 2   
 
   55          0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x07,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFC,
   56          0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x10,0x07,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xF8,
@@ -126,7 +126,7 @@ line level    source
  114   1      //      i = 0xA1C3;
  115   1              LCDInitImage();
  116   1              //_nop_();
-C51 COMPILER V8.08   MAIN                                                                  05/29/2017 15:14:32 PAGE 3   
+C51 COMPILER V8.08   MAIN                                                                  05/29/2017 16:55:23 PAGE 3   
 
  117   1      //      LCDDrawArea(0,0,ClockImage);
  118   1              LCDDrawArea(5,0,moonImage);
@@ -139,14 +139,15 @@ line level    source
 *** WARNING C182 IN LINE 124 OF ..\SOURCE\MAIN.C: pointer to different objects
  125   1              for(j = 0; j < 30000; j++);
  126   1              LCDClearImage(5,0);
- 127   1      //      LCDShowCN(0,3,"身体健康万事如意",8); */
- 128   1              while(1);
- 129   1      }
- 130          
+ 127   1              LCDClearArea(3,1);
+ 128   1      //      LCDShowCN(0,3,"身体健康万事如意",8); */
+ 129   1              while(1);
+ 130   1      }
+ 131          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    128    ----
+   CODE SIZE        =    135    ----
    CONSTANT SIZE    =   1174    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
