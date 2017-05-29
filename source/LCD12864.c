@@ -143,7 +143,7 @@ void LCDShowImage(uint8* image)
 	LCDWriteCmd(0x30);	//进入基本指令操作
 }
 
-void LCDDrawArea(uint8 x, uint8 y, uint8* image)//读入16*16图片
+void LCDDrawArea(uint8 x, uint8 y, uint8* image)//显示16*16图片
 {
 	uint8 i;
 
@@ -167,6 +167,10 @@ void LCDDrawArea(uint8 x, uint8 y, uint8* image)//读入16*16图片
 			LCDWriteData(*image++);
 		}
 	}
+
+	LCDWriteCmd(0x80 | y*16); //归于原点
+	LCDWriteCmd(0x80 | x);
+
 	LCDWriteCmd(0x36);
 	LCDWriteCmd(0x30);
 }
