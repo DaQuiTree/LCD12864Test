@@ -1,0 +1,26 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+G:\GitHub Project\LCD12864Test\project\LCD12864Test.uv2
+Project File Date:  05/29/2017
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling LCD12864.c...
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCANCELCURSOR?LCD12864
+Program Size: data=15.0 xdata=0 code=1662
+"LCD12864Test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling LCD12864.c...
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCDCANCELCURSOR?LCD12864
+Program Size: data=15.0 xdata=0 code=1662
+creating hex file from "LCD12864Test"...
+"LCD12864Test" - 0 Error(s), 1 Warning(s).

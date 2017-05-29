@@ -1,0 +1,4 @@
+"..\output\LCD12864.obj",
+"..\output\main.obj" 
+TO "..\output\LCD12864Test" 
+PRINT(".\LCD12864Test.m51") RAMSIZE(256) 
